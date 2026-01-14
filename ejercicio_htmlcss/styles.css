@@ -349,3 +349,81 @@ article {
     font-weight: 500;
   }
 }
+
+.jobs-search {
+  margin: 0;
+  padding: 0;
+  height: auto !important;
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.25rem;
+  }
+  p {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  select {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  .search-bar {
+    background: var(--input-bg);
+    padding: 0.25rem 0.5rem;
+  }
+  .search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  form {
+    width: 100%;
+    max-width: 1280px;
+  }
+  form div {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  &.btn-primary {
+    background: blue;
+    color: white;
+  }
+  &.btn-large {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+  }
+}
+
+.jobs-listings {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  article {
+      background: none;
+      box-shadow: none;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      margin: 0;
+      display: flex;
+      align-items: start;
+      gap: 1rem;
+    small {
+      font-size: 0.875rem;
+      opacity: 0.75;
+    }
+    p {
+      margin-top: 0.5rem;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
