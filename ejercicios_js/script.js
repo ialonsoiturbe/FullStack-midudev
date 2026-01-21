@@ -36,3 +36,11 @@ jobListingSection.addEventListener('click', function(event){
         boton.disabled = true
     }
 })
+
+//Se pueden escuchar también los filtros
+const filter = document.querySelector('#filter-technology')
+
+//Cada vez que cambia un filtro de ubicación, puedo recuperar el valor
+FileSystemEntry.addEventListener('change', function(){
+    console-log(FileSystemEntry.value)
+})
