@@ -41,6 +41,22 @@ jobListingSection.addEventListener('click', function(event){
 const filter = document.querySelector('#filter-technology')
 
 //Cada vez que cambia un filtro de ubicación, puedo recuperar el valor
-FileSystemEntry.addEventListener('change', function(){
-    console-log(FileSystemEntry.value)
+filter.addEventListener('change', function(){
+    console-log(filter.value)
+})
+
+/*Cada vez que cambie el filtro, llamaré al evento y cambia los resultados
+Utilizaremos el evento change para detectar el cambio del elemento select*/
+const filter2 = document.querySelector('#filter-ubicacion')
+const mensaje = document.querySelector('#filter-selected-value')
+
+filter2.addEventListener('change', function(){
+    const selectedValue = filter2.value
+
+    if(selectedValue){
+        mensaje.textContent = 'Has seleccionado: ${selectedValue}'
+    }
+    else {
+        mensaje.textContent = ''
+    }
 })
