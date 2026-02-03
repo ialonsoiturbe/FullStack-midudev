@@ -36,7 +36,7 @@ jobListingSection.addEventListener('click', function(event){
         boton.disabled = true
     }
 })
-
+/*
 //Se pueden escuchar también los filtros
 const filter = document.querySelector('#filter-technology')
 
@@ -44,14 +44,16 @@ const filter = document.querySelector('#filter-technology')
 filter.addEventListener('change', function(){
     console-log(filter.value)
 })
+*/ 
 
-/*Cada vez que cambie el filtro, llamaré al evento y cambia los resultados
-Utilizaremos el evento change para detectar el cambio del elemento select*/
-const filter2 = document.querySelector('#filter-ubicacion')
+//Cada vez que cambie el filtro, llamaré al evento y cambia los resultados
+//Utilizaremos el evento change para detectar el cambio del elemento select
+const filter = document.querySelector('#filter-ubicacion')
 const mensaje = document.querySelector('#filter-selected-value')
+const jobs = document.querySelectorAll('.job-listong-card')
 
-filter2.addEventListener('change', function(){
-    const selectedValue = filter2.value
+filter.addEventListener('change', function(){
+    const selectedValue = filter.value
 
     if(selectedValue){
         mensaje.textContent = 'Has seleccionado: ${selectedValue}'
@@ -59,4 +61,41 @@ filter2.addEventListener('change', function(){
     else {
         mensaje.textContent = ''
     }
+
+    jobs.forEach(job => {
+        //const modalidad = job.dataset.modalidad forma nativa de hacerlo, es más común getattribute
+        const modalidad = job.getAttribute('data-modalidad')
+        //console.log(job.dataset.modalidad)
+        if (selectedValue === '' || selectedValue === modalidad){
+            job.style.display = 'flex'
+        } else{
+            job.style.display = 'none'
+        }
+    })
 })
+
+/*
+const searchInput = document.querySelector('empleos-search-input')
+
+searchInput.addEventListener('input', function(){
+    console-log(searchInput.value)
+})
+
+const searchForm = document.querySelector('empleos-search-form')
+
+searchForm.addEventListener('submit', function(event){
+    event.preventDefault()
+    //Haz todo lo que ponga previniendo el comportamiento predefinido de los form en HTML
+    console.log('submit')
+})
+
+//Para saber qué teclas hemos presionado usamos
+document.addEventListener('keydown', function(event){
+    console.log("Tecla presionada:", event.key)
+    console.log("Está presionada la tecla shift?", event.shiftkey)
+    console.log("Está presionada la tecla control?", event.ctrlkey)
+    //Y más...
+})
+*/
+
+//Sigamos  desde línea 48

@@ -88,12 +88,12 @@ Lo ideal es enlazar un fichero .js
                     </form>
                 </search>
             -->
-                <form role="search">
+                <form id="empleos-search-form" role="search">
                     <div class="search-bar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-                        <input required type="text" placeholder="Buscar trabajos, empresas o habilidades" />
+                        <input id="empleos-search-input" required type="text" placeholder="Buscar trabajos, empresas o habilidades" />
                     </div>
-            <!--Primera versión de los filtros, hechos individualmente, mejor dejarlos juntos    
+            <!--Primera versión de los filtros, hechos individualmente, mejor dejarlos juntos en un div
                 <select name="Tecnologia" id="tecnologia">
                     <option value="">Tecnologia</option>
                     <option value="Javascript">Javascript</option>
@@ -102,26 +102,6 @@ Lo ideal es enlazar un fichero .js
                     <option value="React">React</option>
                     <option value="NodeJs">NodeJs</option>
                     <option value="DevOps">DevOps</option>
-                </select>
-
-                <select name="Ubicacion" id="ubicacion">
-                    <option value="">Ubicacion</option>
-                    <option value="Remoto">Remoto</option>
-                    <option value="Presencial">Presencial</option>
-                    <option value="Hibrido">Hibrido</option>
-                </select>
-
-                <select name="Tipo de contrato" id="tipo-contrato">
-                    <option value="">Tipo de contrato</option>
-                    <option value="Temporal">Temporal</option>
-                    <option value="Indefinido">Indefinido</option>
-                </select>
-
-                <select name="Nivel de experiencia" id="nivel-experiencia">
-                    <option value="">Nivel de experiencia</option>
-                    <option value="junior">0-2 años</option>
-                    <option value="normal">2-5 años</option>
-                    <option value="senior">5+ años</option>
                 </select>
             -->
                     <div class="search-filters">
@@ -160,7 +140,7 @@ Lo ideal es enlazar un fichero .js
             <h3>Resultados de la búsqueda</h3>
             <section>
                 <div class="jobs-listings">
-                    <article class="job-listing-card">
+                    <article data-modalidad="'remoto" class="job-listing-card">
                         <div>
                             <h3>Ingeniero de Software</h3>
                             <small>Tech Solutions Inc. | Remoto</small>
@@ -171,7 +151,7 @@ Lo ideal es enlazar un fichero .js
                         </div>
                         <button class="button-apply-job" id="boton-importante">Aplicar</button>
                     </article>
-                    <article class="job-listing-card">
+                    <article data-modalidad="'cdmx" class="job-listing-card">
                         <div>
                             <h3>Analista de datos</h3>
                             <small>Data Driven Co. | Ciudad de Mexico</small>
@@ -182,7 +162,7 @@ Lo ideal es enlazar un fichero .js
                         </div>
                         <button class="button-apply-job" name="button">Aplicar</button>
                     </article>
-                    <article class="job-listing-card">
+                    <article data-modalidad="'guadalajara" class="job-listing-card">
                         <div>
                             <h3>Desarrolador de Aplicaciones Móviles</h3>
                             <small>Mobile Apps Ltd. | Guadalajara</small>
