@@ -66,11 +66,13 @@ filter.addEventListener('change', function(){
         //const modalidad = job.dataset.modalidad forma nativa de hacerlo, es más común getattribute
         const modalidad = job.getAttribute('data-modalidad')
         //console.log(job.dataset.modalidad)
-        if (selectedValue === '' || selectedValue === modalidad){
+        /*if (selectedValue === '' || selectedValue === modalidad){
             job.style.display = 'flex'
         } else{
             job.style.display = 'none'
-        }
+        }*/
+       const isShown = selectedValue === '' || selectedValue === modalidad
+       job.classList.toggle('is-hidden', isShown === false)
     })
 })
 
@@ -99,3 +101,44 @@ document.addEventListener('keydown', function(event){
 */
 
 //Sigamos  desde línea 48
+
+//Vamos a probar el fetch con la info de pikachu
+/*fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+    .then((response) => {
+        return response.text(); //transformar como texto la info
+    })
+    //transformar como json la info
+    .then((response) => {
+        return response.json(); 
+    })
+    .then((json) => {
+        console.log(json);
+    })
+    .then((text) => {
+        console.log(text);
+    })*/
+
+const container = document.querySelector('.jobs-listings')
+fetch("./data.json")
+    .then((response) => {
+        return response.json(); 
+    })
+    .then((jobs) => {
+    jobs.forEach(job => {
+      const article = document.createElement('article')
+      article.className = 'job-listing-card'
+      
+      article.dataset.modalidad = job.data.modalidad
+      article.dataset.nivel = job.data.nivel
+      article.dataset.technology = job.data.technology
+
+      article.innerHTML = `<div>
+          <h3>${job.titulo}</h3>
+          <small>${job.empresa} | ${job.ubicacion}</small>
+          <p>${job.descripcion}</p>
+        </div>
+        <button class="button-apply-job">Aplicar</button>`
+
+      container.appendChild(article) //Añade el article nuevo
+    })
+  });
