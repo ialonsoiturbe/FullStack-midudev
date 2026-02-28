@@ -142,3 +142,19 @@ fetch("./data.json")
       container.appendChild(article) //Añade el article nuevo
     })
   });
+
+  //Como funcionaría los clicks para cambiar el estado de la oferta
+const jobsList = document.querySelector('.jobs-list')
+jobsList.addEventListener('click', function (event) {
+// │
+// └── El evento contiene información
+if (event.target.classList.contains('button-apply-job')) {
+// │ │ │
+// │ │ └── ¿Tiene esta clase?
+// │ └───────────── Lista de clases del elemento
+// └────────────────────── Elemento donde se hizo click
+const boton = event.target // El botón específico
+boton.textContent = '¡Aplicado!'
+boton.disabled = true
+}
+})
