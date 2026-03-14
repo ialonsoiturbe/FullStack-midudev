@@ -50,7 +50,7 @@ filter.addEventListener('change', function(){
 //Utilizaremos el evento change para detectar el cambio del elemento select
 const filter = document.querySelector('#filter-ubicacion')
 const mensaje = document.querySelector('#filter-selected-value')
-const jobs = document.querySelectorAll('.job-listong-card')
+const jobs = document.querySelectorAll('.job-listing-card')
 
 filter.addEventListener('change', function(){
     const selectedValue = filter.value
@@ -75,6 +75,7 @@ filter.addEventListener('change', function(){
        job.classList.toggle('is-hidden', isShown === false)
     })
 })
+
 
 /*
 const searchInput = document.querySelector('empleos-search-input')
@@ -158,3 +159,5 @@ boton.textContent = '¡Aplicado!'
 boton.disabled = true
 }
 })
+
+
