@@ -11,12 +11,18 @@
         <script type="module">      
             import React from 'https://esm.sh/react?dev'      
             import ReactDOM from 'https://esm.sh/react-dom/client?dev'  //El ?dev al final activa el modo desarrollo para mejores mensajes de error
+            
             // Crear un elemento h1 con React.createElement      
             const titulo = React.createElement(       
-                'h1', // Tipo de elemento       
-                { style: { color: '#09f' } }, // Props (atributos)        
+                'h1', // Tipo de elemento (h1, div, p, etc.)
+                { style: { color: '#09f' } }, // Props (atributos) ¿Qué propiedades? (className, style, etc.)
                 '¡Hola React!' // Contenido (children)      
             )
+            /*
+            El ejemplo en html sería:
+            <h1 style="color: #09f">¡Hola React!</h1>
+            */
+
             // Renderizar en el DOM
             const rootEl = document.querySelector('#root')
             const root = ReactDOMClient.createRoot(rootEl)
