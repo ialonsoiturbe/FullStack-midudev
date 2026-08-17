@@ -11,7 +11,7 @@
         <script type="module">      
             import React from 'https://esm.sh/react?dev'      
             import ReactDOM from 'https://esm.sh/react-dom/client?dev'  //El ?dev al final activa el modo desarrollo para mejores mensajes de error
-            
+
             // Crear un elemento h1 con React.createElement      
             const titulo = React.createElement(       
                 'h1', // Tipo de elemento (h1, div, p, etc.)
@@ -27,6 +27,26 @@
             const rootEl = document.querySelector('#root')
             const root = ReactDOMClient.createRoot(rootEl)
             root.render(titulo)    
+
+            // Crear una tarjeta de empleo sin JSX
+            const tarjetaEmpleo = React.createElement(
+                'article',  { className: 'job-listing-card' },
+                 React.createElement('h3', null, 'Desarrollador Frontend'),
+                 React.createElement('small', null, 'TechCorp | Madrid'),
+                 React.createElement('p', null, 'Buscamos desarrollador con experiencia en React'),
+                 React.createElement('button', { className: 'button-apply-job' }, 'Aplicar')
+            )
+            // Renderizar la tarjeta
+            root.render(tarjetaEmpleo)
+            /*
+            El ejemplo en html sería:
+            <div class="container">  
+                <h1>Título</h1>  
+                <p>Párrafo</p>  
+                <button>Botón</button>
+            </div>
+            */
+
         </script>  
     </body>
 
