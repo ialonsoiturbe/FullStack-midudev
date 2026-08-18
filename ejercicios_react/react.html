@@ -6,29 +6,37 @@
         <title>React</title>
         <link rel="stylesheet" href="./styles.css" />
     </head>
-    <<body>    <!-- Aquí React renderizará nuestra aplicación -->    
-        <div id="root"></div>    <!-- Cargar React y ReactDOM desde CDN -->    
+    <body>    <!-- Aquí React renderizará nuestra aplicación -->    
+        <div id="root"></div>
+        
+        <!-- Cargar React y ReactDOM desde CDN -->    
         <script type="module">      
             import React from 'https://esm.sh/react?dev'      
             import ReactDOM from 'https://esm.sh/react-dom/client?dev'  //El ?dev al final activa el modo desarrollo para mejores mensajes de error
+            window.React = React
+            window.ReactDOMClient = ReactDOM
+        </script>
 
-            // Crear un elemento h1 con React.createElement      
+            /* Crear un elemento h1 con React.createElement      
             const titulo = React.createElement(       
                 'h1', // Tipo de elemento (h1, div, p, etc.)
                 { style: { color: '#09f' } }, // Props (atributos) ¿Qué propiedades? (className, style, etc.)
                 '¡Hola React!' // Contenido (children)      
             )
+            */
+
             /*
             El ejemplo en html sería:
             <h1 style="color: #09f">¡Hola React!</h1>
             */
 
-            // Renderizar en el DOM
+            /* Renderizar en el DOM
             const rootEl = document.querySelector('#root')
             const root = ReactDOMClient.createRoot(rootEl)
             root.render(titulo)    
+            */
 
-            // Crear una tarjeta de empleo sin JSX
+            /* Crear una tarjeta de empleo sin JSX
             const tarjetaEmpleo = React.createElement(
                 'article',  { className: 'job-listing-card' },
                  React.createElement('h3', null, 'Desarrollador Frontend'),
@@ -36,17 +44,32 @@
                  React.createElement('p', null, 'Buscamos desarrollador con experiencia en React'),
                  React.createElement('button', { className: 'button-apply-job' }, 'Aplicar')
             )
-            // Renderizar la tarjeta
+            */
+            /* Renderizar la tarjeta
             root.render(tarjetaEmpleo)
-            /*
-            El ejemplo en html sería:
+            */
+
+        /*El ejemplo en html sería:
             <div class="container">  
                 <h1>Título</h1>  
                 <p>Párrafo</p>  
                 <button>Botón</button>
             </div>
-            */
+        */
+        <!-- 2. ¡NOVEDAD! Cargar Babel para transformar JSX -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+        <!-- 3. Nuestro código React CON JSX -->
+        <script type="text/babel">
+            // Ahora podemos escribir JSX directamente
+            const titulo = <h1 style={{ color: '#09f' }}>¡Hola React con JSX!</h1>
+
+            //Renderizar
+            window.onload = () => {
+                const rootEl = document.querySelector('#root')
+                const root = ReactDOMClient.createRoot(rootEl)
+                root.render(titulo)
+            }
         </script>  
     </body>
 
