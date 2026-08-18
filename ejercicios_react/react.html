@@ -17,7 +17,8 @@
             window.ReactDOMClient = ReactDOM
         </script>
 
-            /* Crear un elemento h1 con React.createElement      
+            <!-- 
+            /*Crear un elemento h1 con React.createElement      
             const titulo = React.createElement(       
                 'h1', // Tipo de elemento (h1, div, p, etc.)
                 { style: { color: '#09f' } }, // Props (atributos) ¿Qué propiedades? (className, style, etc.)
@@ -56,6 +57,7 @@
                 <button>Botón</button>
             </div>
         */
+        -->
         <!-- 2. ¡NOVEDAD! Cargar Babel para transformar JSX -->
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
@@ -70,7 +72,70 @@
                 const root = ReactDOMClient.createRoot(rootEl)
                 root.render(titulo)
             }
-        </script>  
+
+            //Podemos crear un objeto con la información de un empleo y luego renderizarlo en una tarjeta
+            //Combinamos JSX con variables de JavaScript usando llaves {}
+            const empleo = {
+                titulo: 'Desarrollador Frontend',
+                empresa: 'TechCorp',
+                ubicacion: 'Madrid',
+                descripcion: 'Buscamos desarrollador con experiencia en React'
+            }
+
+            const tarjeta = (
+                <article className="job-listing-card">
+                    <div>
+                        <h3>{empleo.titulo}</h3>
+                        <small>{empleo.empresa} | {empleo.ubicacion}</small>
+                        <p>{empleo.descripcion}</p>
+                    </div>
+                    <button className="button-apply-job">Aplicar</button>
+                </article>
+            )
+        </script> 
+        <script type="text/babel">
+            const empleos = [
+                {
+                    titulo: 'Desarrollador Frontend',
+                    empresa: 'TechCorp',
+                    ubicacion: 'Madrid',
+                    descripcion: 'Buscamos desarrollador con experiencia en React'
+                },
+                {
+                    titulo: 'Diseñador UX/UI',
+                    empresa: 'DesignStudio',
+                    ubicacion: 'Barcelona',
+                    descripcion: 'Se busca diseñador con experiencia en Figma y Adobe XD'
+                },
+                {
+                    titulo: 'Ingeniero de Datos',
+                    empresa: 'DataSolutions',
+                    ubicacion: 'Valencia',
+                    descripcion: 'Experiencia en Python y SQL requerida'
+                }
+            ]
+
+            const app = (
+                <div>
+                    <h1>DevJobs - Ofertas de empleo</h1>
+                    <p>Hay {empleos.length} ofertas disponibles</p>
+
+                    <article className="job-listing-card">
+                        <h3>{empleos[0].titulo}</h3>
+                        <small>
+                            {empleos[0].empresa} | {empleos[0].ubicacion}
+                        </small>
+                        <button className="button-apply-job">Aplicar</button>
+                    </article>
+                    </div>
+            )
+
+            window.onload = () => {
+                const rootEl = document.querySelector('#root')
+                const root = ReactDOMClient.createRoot(rootEl)
+                root.render(app)
+            }
+        </script>
     </body>
 
 </html>
