@@ -19,16 +19,20 @@
         <script src ="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
         <script type="text/babel">
-            //Componente para saludar
+            /*Componente para saludar sin props
             function Saludar() {
                 return <h1>Hola!!!</h1>
             }
-
+            */
+           //Con props
+           function Saludar(props) {
+                return <h1>Hola {props.nombre}!!!</h1>
+            }
             //Rebderizamos el componente
             window.onload = () => {
                 const rootEl = document.querySelector('#root')
                 const root = ReactDOM.createRoot(rootEl)
-                root.render(<Saludar />)
+                root.render(<Saludar nombre="Juan" />)
             }
         </script>
     </body>
