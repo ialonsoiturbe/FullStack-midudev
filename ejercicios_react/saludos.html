@@ -46,6 +46,29 @@
                 const rootEl = document.querySelector('#root')
                 const root = ReactDOM.createRoot(rootEl)
                 root.render(<Saludar nombre="Inesita" edad={25} ciudad="Lyon" />)
+                //Los valores no strings se ponen entre llaves {} y no comillas
+                root.render(<Saludar2 nombre="Inesita" color="blue" />)
+            }
+
+            //Probamos introduciendo estiilos
+            function Saludar2({ nombre, color }) {
+                return (
+                    <h1 style={{ color: color, fontSize: '32px', textAlign: 'center' }}>
+                            ¡Hola, {nombre}!
+                    </h1>
+                )
+            }
+
+            window.onload = () => {
+                const rootEl = document.querySelector('#root')
+                const root = ReactDOM.createRoot(rootEl)
+                root.render(
+                    <div>
+                        <Saludar2 nombre="Miguel" color="blue" />
+                        <Saludar2 nombre="Ana" color="green" />
+                        <Saludar2 nombre="Inesita" color="orange" />
+                    </div>
+                )
             }
         </script>
     </body>
