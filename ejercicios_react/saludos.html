@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0
+        <title>React - Componentes</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+
+    <body>
+        <div id="root"></div>
+        <script type="module">
+            import React from 'https://esm.sh/react?dev'
+            import ReactDOM from 'https://esm.sh/react-dom/client?dev'
+            window.React = React
+            window.ReactDOM = ReactDOM
+        </script>
+
+        <script src ="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">
+            //Componente para saludar
+            function Saludar() {
+                return <h1>Hola!!!</h1>
+            }
+
+            //Rebderizamos el componente
+            window.onload = () => {
+                const rootEl = document.querySelector('#root')
+                const root = ReactDOM.createRoot(rootEl)
+                root.render(<Saludar />)
+            }
+        </script>
+    </body>
+</html>
