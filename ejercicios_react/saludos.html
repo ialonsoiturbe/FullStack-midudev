@@ -59,6 +59,11 @@
                 )
             }
 
+            //Los estilos son un objeto JavaScript
+            //Las propiedades usan camelCase: fontSize en lugar de font-size
+            //Los valores son strings: '32px' o números: 32
+            //Se pasan con llaves: style={estilos} o style={{ color: 'red' }}
+            //Cuando la propiedad del objeto tiene el mismo nombre que la variable (color: color), puedes escribir solo color
             window.onload = () => {
                 const rootEl = document.querySelector('#root')
                 const root = ReactDOM.createRoot(rootEl)
@@ -70,6 +75,13 @@
                     </div>
                 )
             }
+
+            //<!-- HTML normal -->
+            //<h1 style="color: red; font-size: 32px">Hola</h1>
+            
+            //JSX (JavaScript)
+            //<h1 style={{ color: 'red', fontSize: '32px' }}>Hola</h1>
+            
         </script>
     </body>
 </html>
