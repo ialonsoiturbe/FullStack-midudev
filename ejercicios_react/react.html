@@ -19,59 +19,61 @@
         <script src ="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
         <script type="text/babel">
-            // Componente JobCard con múltiples props
-            //Retorna una estructura JSX completa que representa una tarjeta de empleo
-            //En lugar de escribir props.titulo, props.empresa, etc., usamos destructuring para extraer las props directamente
-            function JobCard({ titulo, empresa, ubicacion, descripcion }) {
+            function Header() {
                 return (
-                    <article className="job-listing-card"> //ClassName porque JSX es Js
-                        <h3>{titulo}</h3>
-                        <small>{empresa} | {ubicacion}</small>
-                        <p>{descripcion}</p>
-                        <button className="button-apply-job">Aplicar</button>
-                    </article>
+                    <header>
+                        <h1>DevJobs</h1>
+                        <nav>
+                            <a href="/">Inicio</a>
+                            <a href="/empleos">Empleos</a>
+                        </nav>
+                    </header>
                 )
             }
 
-            // Componente App que compone otros componentes
-            //Pasamos props diferentes a cada instancia de <JobCard />
-            //Cada instancia renderiza con sus propios datos
+            function JobList() {
+                return (
+                    <div className="jobs-listings">
+                        <JobCard
+                            titulo="Desarrollador Frontend"
+                            empresa="TechCorp"
+                            ubicacion="Madrid"
+                            descripcion="Buscamos desarrollador con experiencia en React"
+                        />
+                        <JobCard
+                            titulo="Diseñador UX/UI"
+                            empresa="DesignStudio"
+                            ubicacion="Barcelona"
+                            descripcion="Se busca diseñador creativo con experiencia en diseño de interfaces"
+                        />
+                        <JobCard
+                            titulo="Ingeniero de Datos"
+                            empresa="DataSolutions"
+                            ubicacion="Valencia"
+                            descripcion="Se busca ingeniero de datos con experiencia en análisis y visualización de datos"
+                        />
+                    </div>
+                )
+            }
+
+            function Footer() {
+                return (
+                    <footer>
+                        <p>&copy; 2024 DevJobs. Todos los derechos reservados.</p>
+                    </footer>
+                )
+            }
+
             function App() {
                 return (
-                    <section>
-                        <h2>Empleos disponibles</h2>
-                        <div className="container">
-                            <h1>Ofertas de Empleo</h1>
-                            <JobCard
-                                titulo="Desarrollador Frontend"
-                                empresa="TechCorp"
-                                ubicacion="Madrid"
-                                descripcion="Buscamos desarrollador con experiencia en React"
-                            />
-                            <JobCard
-                                titulo="Diseñador UX/UI"
-                                empresa="DesignStudio"
-                                ubicacion="Barcelona"
-                                descripcion="Se busca diseñador creativo con experiencia en diseño de interfaces"
-                            />
-                            <JobCard
-                                titulo="Ingeniero de Datos"
-                                empresa="DataSolutions"
-                                ubicacion="Valencia"
-                                descripcion="Se requiere ingeniero de datos con experiencia en Big Data y análisis de datos"
-                            />
-                            <JobCard
-                                titulo="Administrador de Sistemas"
-                                empresa="ITServices"
-                                ubicacion="Sevilla"
-                                descripcion="Buscamos administrador de sistemas con experiencia en servidores y redes"
-                            />
-                        </div>
-                    </section>
+                    <div>
+                        <Header />
+                        <JobList />
+                        <Footer />
+                    </div>
                 )
             }
 
-            //Renderizamos el componente principal App en el DOM y React automáticamente renderiza todos los componentes hijos JobCard
             window.onload = () => {
                 const rootEl = document.querySelector('#root')
                 const root = ReactDOM.createRoot(rootEl)
