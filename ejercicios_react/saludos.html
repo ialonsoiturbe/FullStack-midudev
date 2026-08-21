@@ -70,7 +70,7 @@
                 const root = ReactDOM.createRoot(rootEl)
                 root.render(
                     <div>
-                        <Saludar2 nombre="Miguel" color="blue" /> //Función siempre en mayúscula al principio para diferenciar de html
+                        <Saludar2 nombre="Miguel" color="blue" /> //Componente siempre en mayúscula al principio para diferenciar de html
                         <Saludar2 nombre="Ana" color="green" />
                         <Saludar2 nombre="Inesita" color="orange" />
                     </div>
@@ -82,6 +82,24 @@
             
             //JSX (JavaScript)
             //<h1 style={{ color: 'red', fontSize: '32px' }}>Hola</h1>
+
+            /* Componentes: Se usan como etiquetas JSX --PascalCase--
+            function Boton() {
+              return <button>Haz clic</button>
+            }
+            Se invoca así: <Boton />
+            Retorna elementos que react puede renderizar
+            */
+
+            /*
+            Funciones normales: Se llaman con paréntesis --camelCase--
+            function saludar(nombre) {
+                return `Hola ${nombre}`
+                }
+            Se invoca así: saludar('Miguel')
+            Retorna cualquier tipo de dato Js
+            */
+
             
         </script>
     </body>
