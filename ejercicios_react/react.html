@@ -32,6 +32,27 @@
                 )
             }
 
+            //Funcion de jobcards que se ejecuta al hacer click
+            function JobCard({ titulo, empresa, ubicacion, descripcion }) {
+                const handleAplicar = () => {
+                    console.log('¡Click en el botón!')
+                    console.log('Aplicando a:', titulo, '-', empresa)
+                    alert(`Has aplicado a: ${titulo} en ${empresa}`)
+                }
+                return (
+                    <article className="job-listing-card">
+                        <div>
+                            <h3>{titulo}</h3>
+                            <small>{empresa} | {ubicacion}</small>
+                            <p>{descripcion}</p>
+                        </div>
+                        <button className="button-apply-job" onClick={handleAplicar}>
+                            Aplicar
+                        </button>
+                    </article>
+                )
+            }
+
             //Muestra la lista de empleos
             function JobList() {
                 return (
