@@ -34,6 +34,9 @@
 
             //Funcion de jobcards que se ejecuta al hacer click
             function JobCard({ titulo, empresa, ubicacion, descripcion }) {
+                //Definimnios la función handleAplicar que se ejecuta al hacer click en el botón dentro del componente
+                //Esta función tiene acceso a as props titulo y empresa, que se pasan como argumentos al componente JobCard
+                //Conectamos la función al botón con onClick={handleAplicar}
                 const handleAplicar = () => {
                     console.log('¡Click en el botón!')
                     console.log('Aplicando a:', titulo, '-', empresa)
