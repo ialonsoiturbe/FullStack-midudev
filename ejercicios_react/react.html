@@ -34,8 +34,18 @@
 
             //Funcion de jobcards que se ejecuta al hacer click
             function JobCard({ titulo, empresa, ubicacion, descripcion }) {
-                //El estado cambia
+                // Declarar estado
+                // React.useState(false) - Crea una variable de estado con valor inicial false 
+
+                // Para hacerlo sin destructuring useState devuelve un array con 2 elementos:
+                // const resultado = React.useState(false)
+                // const aplicado = resultado[0] // El valor
+                // const setAplicado = resultado[1] // La función
+
                 const [aplicado, setAplicado] = React.useState(false)
+                //     ↓          ↓                ↓
+                //   valor    función         valor inicial
+                //  actual   para cambiar
 
                 const handleAplicar = () => {
                     setAplicado(true) // Cambiamos el estado a true
@@ -49,11 +59,22 @@
                             <p>{descripcion}</p>
                         </div>
                         <button
+                        //className - Si aplicado es true, añade la clase is-applied
                             className={aplicado ? 'button-apply-jon is-applied' : 'button-apply-job'}
                             onClick={handleAplicar}
                             disabled={aplicado} // Deshabilitamos el botón si ya se aplicó
                         >
+                        {/*Operador ternario condición ? siVerdadero : siFalso, es como un if/else en una sola línea*/}
                             {aplicado ? 'Aplicado' : 'Aplicar'}
+
+                            {/* Con if/else (no funciona en JSX directamente)
+                            
+                            if (aplicado) {
+                                return 'Aplicado'
+                            } else {
+                                return 'Aplicar'
+                            }
+                            */}
                         </button>
                     </article>
                 )
