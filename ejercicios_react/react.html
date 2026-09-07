@@ -34,6 +34,10 @@
 
             //Funcion de jobcards que se ejecuta al hacer click
             function JobCard({ titulo, empresa, ubicacion, descripcion }) {
+
+                //Con console.log podemos ver cuándo se ejecuta
+                console.log('JobCard se está renderizando. Título:', titulo)
+
                 // Declarar estado
                 // React.useState(false) - Crea una variable de estado con valor inicial false 
 
@@ -48,8 +52,11 @@
                 //  actual   para cambiar
 
                 const handleAplicar = () => {
+                    console.log('Click en aplicar')
                     setAplicado(true) // Cambiamos el estado a true
                 }
+
+                console.log('Estado actual de aplicado:', aplicado)
 
                 return (
                     <article className="job-listing-card">
