@@ -51,10 +51,15 @@
                 //   valor    función         valor inicial
                 //  actual   para cambiar
 
+                //React ejecuta cada JobCard, aplicado empieza en false y se muestra APLICAR
+
                 const handleAplicar = () => {
                     console.log('Click en aplicar')
                     setAplicado(true) // Cambiamos el estado a true
                 }
+                //Al hacer click se ejecuta handleAplicar y llama a setAplicado(true)
+                //React detecta el cambio y vuelve a ejecutar la función JobCard y aplicado pasa a True, mostrando APLICADO y deshabilitando el botón
+                //La función componente se ejecuta completamente de nuevo cada vez que el estado cambia.
 
                 console.log('Estado actual de aplicado:', aplicado)
 
