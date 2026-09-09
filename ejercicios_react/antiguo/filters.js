@@ -1,4 +1,4 @@
-import { state } from './config.js'
+import { state } from '../config.js'
 
 state.count++
 
