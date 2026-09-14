@@ -10,10 +10,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <main>
-        <h2>Bienvenido a DevJobs</h2>
-        <p>Encuentra las mejores oportunidades de trabajo en desarrollo web y tecnología.</p>
-      </main>
+      <JobList />
       <Footer />
     </div>
   )
