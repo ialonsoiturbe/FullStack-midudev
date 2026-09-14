@@ -3,6 +3,7 @@ import './App.css'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
+import JobList from './components/JobList'
 
 //Definimos el componente principal de la app
 function App() {
