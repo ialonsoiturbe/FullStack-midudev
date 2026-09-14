@@ -1,5 +1,8 @@
 function Pagination({ currentPage, totalPages }) {
     // Generar array de páginas a mostrar
+    //Array.from() crea un nuevo array
+    //{ length: totalPages } define la longitud del array
+    //(_, i) => i + 1 transforma cada índice en un número de página
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1)
 
     const styleLinkLeft = {
@@ -30,6 +33,9 @@ function Pagination({ currentPage, totalPages }) {
                 </svg>
             </a>
 
+            {/*Recorre cada elemento del array pages
+            //Por cada page, retorna un elemento <a>
+            //key={page} es obligatorio para que React identifique cada elemento*/}
             {pages.map((page) => (
                 <a key={page} className={currentPage === page ? 'is-active' : ''} href="#">
                     {page}
