@@ -3,13 +3,20 @@ import './App.css'
 
 //Definimos el componente principal de la app
 function App() {
-    //Usamos usestate porque ya no necesitamos un contador global, sino que cada componente puede tener su propio estado
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <h1>Vite + React</h1>
-      <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+    <div>
+      {/*-- Aquí iría todo tu HTML de DevJobs */}
+      <header>
+        <nav>...</nav>
+      </header>
+
+      <main>
+        <section>...</section>
+      </main>
+
+      <footer>
+        <p>...</p>
+      </footer>
     </div>
   )
 }
