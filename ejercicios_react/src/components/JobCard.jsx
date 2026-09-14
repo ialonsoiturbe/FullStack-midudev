@@ -47,6 +47,7 @@ function JobCard({ job }) {
                 <button className="btn-apply">Aplicar</button>
             </footer>
         </article>
+    )
 }
 
 export default JobCard
