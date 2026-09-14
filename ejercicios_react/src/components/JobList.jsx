@@ -23,8 +23,6 @@ function JobList() {
                     tags: ["Diseño", "UX", "UI"]
                 }}
             />
-                description="Se busca diseñador creativo con experiencia en diseño de interfaces"
-            />
             <JobCard
                 job={{
                     id: 3,
